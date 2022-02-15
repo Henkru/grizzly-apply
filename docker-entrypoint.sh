@@ -19,10 +19,10 @@ done
 
 for f in $(find "$CONFIG_PATH" -type f -name "datasource-*"); do
     echo Applying datasource: $f
-    grr apply $f
+    grr apply -J /jsonnet-libs $f
 done
 
 for f in $(find "$CONFIG_PATH" -type f -name "dashboard-*"); do
     echo Applying dashboard: $f
-    grr apply $f
+    grr apply -J /jsonnet-libs $f
 done
